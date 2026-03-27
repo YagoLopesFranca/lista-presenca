@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Presença</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="header">
+        <div class="header-label">Registro de Participação</div>
+        <h1>Lista de Presença</h1>
+        <p>
+          Preencha os dados abaixo para confirmar sua presença no treinamento.
+        </p>
+      </div>
+      <div class="accent-bar"></div>
+
+      <form
+        id="presencaForm"
+        class="form-body"
+        action="https://formspree.io/f/xnjojppl"
+        method="POST"
+      >
+        <div class="field">
+          <div class="nr-section-title">
+            Tipo de Treinamento <span style="color: var(--error)">*</span>
+          </div>
+          <div class="nr-grid">
+            <div class="nr-option">
+              <input
+                type="radio"
+                name="treinamento"
+                id="nr10"
+                value="NR-10 – Segurança em Eletricidade"
+                required
+              />
+              <label for="nr10">
+                <span class="nr-badge">NR-10</span>
+                <span class="nr-desc">Segurança em Eletricidade</span>
+              </label>
+            </div>
+            <div class="nr-option">
+              <input
+                type="radio"
+                name="treinamento"
+                id="nr11"
+                value="NR-11 – Transporte de Materiais"
+              />
+              <label for="nr11">
+                <span class="nr-badge">NR-11</span>
+                <span class="nr-desc">Transporte de Materiais</span>
+              </label>
+            </div>
+            <div class="nr-option">
+              <input
+                type="radio"
+                name="treinamento"
+                id="nr12"
+                value="NR-12 – Segurança em Máquinas"
+              />
+              <label for="nr12">
+                <span class="nr-badge">NR-12</span>
+                <span class="nr-desc">Segurança em Máquinas</span>
+              </label>
+            </div>
+            <div class="nr-option">
+              <input
+                type="radio"
+                name="treinamento"
+                id="nr23"
+                value="NR-23 – Proteção contra Incêndio"
+              />
+              <label for="nr23">
+                <span class="nr-badge">NR-23</span>
+                <span class="nr-desc">Proteção contra Incêndio</span>
+              </label>
+            </div>
+            <div class="nr-option">
+              <input
+                type="radio"
+                name="treinamento"
+                id="nr17"
+                value="NR-17 – Ergonomia"
+              />
+              <label for="nr17">
+                <span class="nr-badge">NR-17</span>
+                <span class="nr-desc">Ergonomia</span>
+              </label>
+            </div>
+          </div>
+          <span class="err" id="errNr">Selecione o tipo de treinamento.</span>
+        </div>
+
+        <div class="field">
+          <label for="nome">Nome Completo <span class="req">*</span></label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Seu nome completo"
+            autocomplete="name"
+          />
+          <span class="err" id="errNome">Informe seu nome completo.</span>
+        </div>
+
+        <div class="field">
+          <label for="matricula"
+            >Matrícula / CPF <span class="req">*</span></label
+          >
+          <input
+            type="text"
+            id="matricula"
+            name="matricula_cpf"
+            placeholder="Ex: 00123 ou 000.000.000-00"
+          />
+          <span class="err" id="errMatricula"
+            >Informe sua matrícula ou CPF.</span
+          >
+        </div>
+
+        <div class="field">
+          <label for="funcao">Função / Cargo <span class="req">*</span></label>
+          <input
+            type="text"
+            id="funcao"
+            name="funcao"
+            placeholder="Ex: Técnico de Segurança"
+          />
+          <span class="err" id="errFuncao">Informe sua função.</span>
+        </div>
+
+        <div class="field">
+          <label for="empresa">Empresa <span class="req">*</span></label>
+          <input
+            type="text"
+            id="empresa"
+            name="empresa"
+            placeholder="Nome da empresa"
+          />
+          <span class="err" id="errEmpresa">Informe o nome da empresa.</span>
+        </div>
+
+        <input type="hidden" name="data_hora" id="dataHora" />
+        <input
+          type="hidden"
+          name="_subject"
+          value="✅ Nova Presença Registrada — Treinamento NR"
+        />
+
+        <button type="submit" class="btn" id="submitBtn">
+          Confirmar Presença
+        </button>
+      </form>
+
+      <div class="success" id="success">
+        <div class="check">✅</div>
+        <h2>Presença Registrada!</h2>
+        <p>
+          Seus dados foram enviados com sucesso. Obrigado pela participação.
+        </p>
+      </div>
+
+      <div class="footer-note" id="footerNote">
+        Consultoria em Ergonomia Bahia · Dados usados apenas para controle de
+        treinamento.
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
